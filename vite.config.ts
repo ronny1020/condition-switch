@@ -1,6 +1,7 @@
 import { resolve } from "path";
 import { defineConfig } from "vite";
 import pkg from "./package.json";
+import dts from "vite-plugin-dts";
 
 export default defineConfig({
   build: {
@@ -12,4 +13,5 @@ export default defineConfig({
     minify: false,
     sourcemap: true,
   },
+  plugins: [dts({ rollupTypes: true })],
 });
