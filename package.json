@@ -1,9 +1,38 @@
 {
-  "name": "condswitch",
-  "private": true,
-  "version": "0.0.0",
+  "name": "condition-switch",
+  "description": "a condition switch library for js/ts",
+  "keywords": [
+    "js",
+    "ts"
+  ],
+  "homepage": "https://github.com/ronny1020/condition-switch#readme",
+  "bugs": {
+    "url": "https://github.com/ronny1020/condition-switch/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ronny1020/condition-switch.git"
+  },
   "type": "module",
-  "source": "src/index.ts",
+  "license": "MIT",
+  "author": {
+    "name": "ronny1020"
+  },
+  "main": "dist/index.umd.cjs",
+  "module": "dist/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.umd.cjs"
+    }
+  },
+  "source": "src/index.tsx",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "private": false,
+  "version": "0.0.0",
   "scripts": {
     "build": "tsc && vite build",
     "test": "vitest"
