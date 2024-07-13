@@ -5,13 +5,15 @@
   "type": "module",
   "source": "src/index.ts",
   "scripts": {
-    "build": "tsc && vite build"
+    "build": "tsc && vite build",
+    "test": "vitest"
   },
   "devDependencies": {
     "@types/node": "^20.14.10",
     "prettier": "^3.3.2",
     "typescript": "^5.2.2",
     "vite": "^5.3.1",
-    "vite-plugin-dts": "^3.9.1"
+    "vite-plugin-dts": "^3.9.1",
+    "vitest": "^2.0.2"
   }
 }
