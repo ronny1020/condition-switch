@@ -1,0 +1,15 @@
+{
+  "name": "condswitch",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "source": "src/index.ts",
+  "scripts": {
+    "build": "tsc && vite build"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.10",
+    "typescript": "^5.2.2",
+    "vite": "^5.3.1"
+  }
+}
