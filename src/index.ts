@@ -1,12 +1,12 @@
 /**
  * Represents a value or a function that returns a value.
  */
-export type ValueOrFunction<T> = T | (() => T)
+export type ValueOrFunction<T> = T extends Function ? () => T : T | (() => T)
 
 /**
  * Represents a condition that can be a value or a function that returns a value.
  */
-export type Condition = ValueOrFunction<unknown>
+export type Condition = unknown
 
 /**
  * Represents a value that can be a direct value or a function that returns a value.
@@ -38,12 +38,12 @@ export type ConditionWithValue<T = unknown> =
  * @param value - The value or function to execute.
  * @returns The result of executing the function or the value itself.
  */
-function executeFunctionOrReturn<T = unknown>(value: T | (() => T)): T {
+function executeFunctionOrReturn<T = unknown>(value: ValueOrFunction<T>): T {
   if (value instanceof Function) {
     return value()
   }
 
-  return value
+  return value as T
 }
 
 /**
@@ -55,7 +55,7 @@ function executeFunctionOrReturn<T = unknown>(value: T | (() => T)): T {
  */
 export default function conditionSwitch<T, DefaultT extends T | undefined = T>(
   conditionWithValues: ConditionWithValue<T>[],
-  defaultValue: DefaultT | (() => DefaultT)
+  defaultValue: ValueOrFunction<DefaultT>
 ): T | DefaultT {
   for (let i = 0; i < conditionWithValues.length; i++) {
     const group = conditionWithValues[i]
