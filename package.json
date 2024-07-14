@@ -26,15 +26,16 @@
       "require": "./dist/index.umd.cjs"
     }
   },
-  "source": "src/index.tsx",
+  "source": "src/index.ts",
   "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
   "private": false,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "scripts": {
     "build": "tsc && vite build",
+    "prepublish": "pnpm i && tsc && vitest run && vite build",
     "test": "vitest"
   },
   "devDependencies": {
