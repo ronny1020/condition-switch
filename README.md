@@ -1,6 +1,6 @@
 # Condition Switch Library
 
-This TypeScript library provides a utility function `conditionSwitch` for performing switch-like operations based on conditions with associated values.
+This TypeScript library provides a utility function `condSwitch` for performing switch-like operations based on conditions with associated values.
 
 The condSwitch function is convenient to use in arrow functions, JSX, and other situations where if or switch statements are cumbersome or not allowed.
 
@@ -45,7 +45,7 @@ You can also use functions for conditions and values to delay their evaluation u
 Please use function when there is performance concern or the return type is function.
 
 ```ts
-const result = conditionSwitch(
+const result = condSwitch(
   [
     { condition: false, value: () => 1 },
     { condition: () => true, value: () => 2 },
@@ -56,7 +56,7 @@ const result = conditionSwitch(
 )
 console.log(result) // Output: 2
 
-const func = conditionSwitch<() => number>(
+const func = condSwitch<() => number>(
   [
     [() => true, () => () => 42],
     [() => false, () => () => 0]
@@ -74,7 +74,7 @@ const MyComponent = () => {
 
   return (
     <div>
-      {conditionSwitch(
+      {condSwitch(
         [
           {
             condition: isLoading,

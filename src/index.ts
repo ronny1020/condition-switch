@@ -53,7 +53,7 @@ function executeFunctionOrReturn<T = unknown>(value: ValueOrFunction<T>): T {
  * @param defaultValue - The default value to return if no conditions match.
  * @returns The value associated with the first matching condition, or the default value.
  */
-export default function conditionSwitch<T, DefaultT extends T | undefined = T>(
+export default function condSwitch<T, DefaultT extends T | undefined = T>(
   conditionWithValues: ConditionWithValue<T>[],
   defaultValue: ValueOrFunction<DefaultT>
 ): T | DefaultT {
