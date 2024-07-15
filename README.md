@@ -20,23 +20,36 @@ pnpm add
 
 ### Basic Usage
 
-```ts
-import condSwitch from 'condition-switch'
+#### Using `ConditionWithValueObject`
 
-const result = condSwitch(
-  [
-    {
-      condition: true,
-      value: 42
-    },
-    {
-      condition: false,
-      value: 0
-    }
-  ],
-  100
-)
-console.log(result) // Output: 42
+A `ConditionWithValueObject` is an object with two properties: `condition` and `value`. This format is particularly useful when you want to make your code more readable and self-documenting.
+
+```ts
+import conditionSwitch, { ConditionWithValueObject } from 'condition-switch'
+
+const conditions: ConditionWithValueObject<string>[] = [
+  { condition: false, value: 'Condition 1' },
+  { condition: true, value: 'Condition 2' }
+]
+
+const result = conditionSwitch(conditions, 'Default Value')
+console.log(result) // Output: "Condition 2"
+```
+
+#### Using `ConditionWithValueArray`
+
+A `ConditionWithValueArray` is a tuple where the first element is the condition and the second element is the value. This format can be more concise and is useful when you want to keep your code compact.
+
+```ts
+import conditionSwitch, { ConditionWithValueArray } from 'condition-switch'
+
+const conditions: ConditionWithValueArray<string>[] = [
+  [false, 'Condition 1'],
+  [true, 'Condition 2']
+]
+
+const result = conditionSwitch(conditions, 'Default Value')
+console.log(result) // Output: "Condition 2"
 ```
 
 ### Using Functions
