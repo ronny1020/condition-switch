@@ -13,7 +13,7 @@ npm install condition-switch
 # or
 yarn add condition-switch
 # or
-pnpm add
+pnpm add condition-switch
 ```
 
 ## Usage
