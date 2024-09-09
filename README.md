@@ -16,13 +16,15 @@ yarn add condition-switch
 pnpm add condition-switch
 ```
 
+- [NPM: condition-switch](https://www.npmjs.com/package/condition-switch) 
+
 ## Usage
 
 ### Basic Usage
 
 #### Using `ConditionWithValueObject`
 
-A `ConditionWithValueObject` is an object with two properties: `condition` and `value`. This format is particularly useful when you want to make your code more readable and self-documenting.
+A `ConditionWithValueObject` has two properties: `condition` and `value`. This format is handy for making your code more readable and self-documenting.
 
 ```ts
 import conditionSwitch, { ConditionWithValueObject } from 'condition-switch'
@@ -55,7 +57,7 @@ console.log(result) // Output: "Condition 2"
 ### Using Functions
 
 You can also use functions for conditions and values to delay their evaluation until they are needed.
-Please use function when there is performance concern or the return type is function.
+Please use a function when there is a performance concern or the return type is a function.
 
 ```ts
 const result = condSwitch(
