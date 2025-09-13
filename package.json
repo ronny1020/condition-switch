@@ -1,19 +1,21 @@
 {
   "name": "condition-switch",
-  "description": "a condition switch library for js/ts",
+  "version": "0.1.1",
+  "private": false,
+  "description": "A powerful and flexible TypeScript utility for writing clean, declarative, and expressive conditional logic. It's a great replacement for if/else and switch statements in functional components, arrow functions, and other expression-based scenarios.",
   "keywords": [
-    "js",
-    "ts",
-    "condition",
+    "conditional",
     "switch",
-    "conditional logic",
-    "utility",
-    "switch case",
-    "decision making",
     "logic",
-    "javascript",
+    "declarative",
+    "expression",
+    "functional",
     "typescript",
-    "conditional statements"
+    "javascript",
+    "react",
+    "jsx",
+    "tsx",
+    "utility"
   ],
   "homepage": "https://github.com/ronny1020/condition-switch#readme",
   "bugs": {
@@ -23,29 +25,29 @@
     "type": "git",
     "url": "git+https://github.com/ronny1020/condition-switch.git"
   },
-  "type": "module",
   "license": "MIT",
   "author": {
     "name": "ronny1020"
   },
-  "main": "dist/index.umd.cjs",
-  "module": "dist/index.js",
+  "type": "module",
   "exports": {
     ".": {
       "import": "./dist/index.js",
       "require": "./dist/index.umd.cjs"
     }
   },
+  "main": "dist/index.umd.cjs",
+  "module": "dist/index.js",
   "source": "src/index.ts",
   "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
-  "private": false,
-  "version": "0.1.1",
   "scripts": {
     "build": "tsc && vite build",
+    "format": "prettier --write .",
     "prepublish": "pnpm i && tsc && vitest run && vite build",
+    "sort-package-json": "npx sort-package-json",
     "test": "vitest"
   },
   "devDependencies": {
