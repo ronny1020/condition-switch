@@ -1,6 +1,6 @@
 {
   "name": "condition-switch",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": false,
   "description": "A powerful and flexible TypeScript utility for writing clean, declarative, and expressive conditional logic. It's a great replacement for if/else and switch statements in functional components, arrow functions, and other expression-based scenarios.",
   "keywords": [
